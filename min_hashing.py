@@ -14,6 +14,7 @@ class MinHashing:
         max_num = 2 ** 32 - 1
         prime = 4294975747
         min_hash = [None] * self._length
+        # Seed for replicating the random generation per each iteration
         random.seed(111)
 
         for n in range(self._length):
@@ -25,7 +26,7 @@ class MinHashing:
 
                 calc = ((a * elem + b) % prime) % max_num
                 vec[i] = calc
-
+            # Storing the minimum of the generated values
             min_hash[n] = min(vec)
 
         return min_hash
