@@ -1,4 +1,3 @@
-import numpy as np
 from operator import itemgetter
 from compare_signatures import CompareSignatures
 
@@ -12,20 +11,13 @@ class LSH:
     def run(self):
         return self.apply_LSH_technique(self._minHash, self._t)
 
-    def initialize_array_bucket(self, bands):
+    def apply_LSH_technique(self, minHash, t):
+        rows = 3
+        bands = 4
+        candidates = {}
         array_buckets = []
         for band in range(bands):
             array_buckets.append([[] for i in range(101)])
-        return array_buckets
-
-    def apply_LSH_technique(self, minHash, t):
-
-        bands = 4
-        rows = 3
-
-        array_buckets = self.initialize_array_bucket(bands)
-
-        candidates = {}
 
         i = 0
         for b in range(bands):

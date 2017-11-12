@@ -52,7 +52,6 @@ if __name__ == "__main__":
     print(">>> minHashes built in %.2f secs" % (end - start))
     print("")
 
-
     # Estimates similarity of two minhash signatures as a fraction of components, in which they agree.
     compare_signatrues = CompareSignatures(val1, val2)
     start = timer()
@@ -60,7 +59,6 @@ if __name__ == "__main__":
     end = timer()
     print(">>>>>> Estimation of the compared signatures: %s and it took %.2f secs" % (compared, (end-start)))
     print("")
-
 
     print(">>> Calculating LSH...")
     # Estimating similarity of a group of documents using LSH
